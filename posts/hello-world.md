@@ -1,7 +1,7 @@
 ---
-title: Hola Mundo
-description: Descripción
-active: true
+  title: Hola Mundo
+  description: Descripción
+  active: true
 ---
 
 This is an example post. There's another one [here](/posts/example-post).
@@ -19,3 +19,5 @@ asasdasdasd
 asdasdasdasd
 
 # Titulo
+
+hola mundo
