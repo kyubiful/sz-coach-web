@@ -11,9 +11,13 @@ type Props = {
 export default function PostPage ({ params }: Props) {
   const slug = params.slug
   const postData = getPostDataBySlug(slug)
+
   return (
     <>
-      <Link href='/blog'>Atrás</Link>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Link href='/blog'>Atrás</Link>
+        <Link href={`/blog/${slug}/edit`} prefetch={false}>Editar</Link>
+      </div>
       <h1>{postData.data.title}</h1>
       <Markdown
         options={{
