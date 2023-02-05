@@ -38,3 +38,5 @@ next-env.d.ts
 # lock
 yarn.lock
 .vscode/settings.json
+.yarn
+.yarnrc.yml
