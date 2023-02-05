@@ -1,5 +1,5 @@
 export default function ContactPage () {
   return (
-    <h1>Página Contacto</h1>
+    <h1 className='text-3xl font-bold underline'>Página Contacto</h1>
   )
 }
