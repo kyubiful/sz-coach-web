@@ -21,8 +21,19 @@ export const getPostDataBySlug = (slug: string): PostData => {
   return { data, content } as PostData
 }
 
-export const savePostDataBySlug = (slug: string, postData: string): void => {
+export const savePostDataBySlug = (slug: string, postData: string, title: string, description: string, active: boolean): void => {
+  const data = createPostContent(postData, title, description, active)
   fs.unlink(path.join(postsFolder, slug + '.md'), () => {
-    fs.writeFileSync(path.join(postsFolder, slug + '.md'), postData, { encoding: 'utf-8' })
+    fs.writeFileSync(path.join(postsFolder, slug + '.md'), data, { encoding: 'utf-8' })
   })
+}
+
+function createPostContent (postData: string, title: string, description: string, active: boolean): string {
+  const data = `---
+  title: ${title}
+  description: ${description}
+  active: ${active}
+---
+` + postData
+  return data
 }
